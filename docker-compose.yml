@@ -14,6 +14,8 @@ services:
       - ./pagila-schema-jsonb.sql:/docker-entrypoint-initdb.d/1-pagila-schema-jsonb.sql
       - ./pagila-data.sql:/docker-entrypoint-initdb.d/2-pagila-data.sql
       - ./restore-pagila-data-jsonb.sh:/docker-entrypoint-initdb.d/3-restore-pagila-data-jsonb.sh
+      - ./custom-schema.sql:/docker-entrypoint-initdb.d/4-custom-schema.sql
+      - ./custom-data.sql:/docker-entrypoint-initdb.d/5-custom-data.sql
       - ./pagila-data-yum-jsonb.backup:/docker-entrypoint-initdb.d/pagila-data-yum-jsonb.backup
       - ./pagila-data-apt-jsonb.backup:/docker-entrypoint-initdb.d/pagila-data-apt-jsonb.backup
       - pgdata:/var/lib/postgresql/data
